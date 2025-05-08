@@ -2,23 +2,23 @@
 
 What the process for this is.
 
-[X]: # - How are stories and work items prioritized?
+[]: # - How are stories and work items prioritized?
 
 Stories and work items are prioritized by importance as discussed by the team and client. Most important and time-sensitive items are at the top of the list.
 
-[X]: # - How are stories and work items estimated?
+[]: # - How are stories and work items estimated?
 
 We will discuss the estimation for stories and work items during team meetings. Everyone will discuss how long they think each item will take and come to a consensus.
 
 []: # - How are stories and work items assigned to team members?
 
 
-[X]: # - How are stories and work items tracked?
+[]: # - How are stories and work items tracked?
 
 Stories and work items are tracked on the GitHub Projects board. Teammates will move tasks from left to right as they reach different stages (backlog, ready, in progress, in review, done).
 
 []: # - How are stories and work items reported on?
 
-[X]: # - How are stories and work items archived?
+[]: # - How are stories and work items archived?
 
 Stores and work items are archived in the done section of the GitHub Projects board when they have been fully reviewed by the team and client and agreed upon to be completed.
