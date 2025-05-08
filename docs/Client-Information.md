@@ -4,7 +4,7 @@
 
 ### Overview Deck
 
-link to the overview deck from the client
+https://docs.google.com/presentation/d/1_tXF1XgQ01260ULNqe7g1R6yhDG_jrI9jWtKbzcCC4Q/edit?usp=sharing
 
 ### Meeting minutes / recording /action items
 
