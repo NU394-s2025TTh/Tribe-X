@@ -8,4 +8,4 @@ https://docs.google.com/presentation/d/1_tXF1XgQ01260ULNqe7g1R6yhDG_jrI9jWtKbzcC
 
 ### Meeting minutes / recording /action items
 
-either create a project documentation page or link to another tools where the meeting minutes are recorded.
+We're going to record meeting minutes in our Team X google drive folder. We aren't going to use any special tools.
