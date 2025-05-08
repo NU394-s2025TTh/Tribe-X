@@ -2,6 +2,8 @@
 
 ## Links to Client provided Information and contact information
 
+Client email: js@empwr.ai
+
 ### Overview Deck
 
 https://docs.google.com/presentation/d/1_tXF1XgQ01260ULNqe7g1R6yhDG_jrI9jWtKbzcCC4Q/edit?usp=sharing
