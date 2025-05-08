@@ -8,13 +8,13 @@ We are planning on using the common method of separating by structure functional
 
 We liked these naming conventions from the web and AI bots:
 
-1. **Component Names**: Use PascalCase for React components. This helps React distinguish between components and HTML elements[^1].
+1. **Component Names**: Use PascalCase for React components. This helps React distinguish between components and HTML elements.
 2. **File Names**:
    - For non-component files, camelCase or kebab-case is common.
-   - For component files, stick with PascalCase to match the component names[^2].
-3. **Folders**: Keep main directories lowercase to differentiate them from components[^1].
-4. **CSS Modules**: If you’re using CSS modules, use camelCase for class names to maintain consistency with JavaScript naming conventions[^1].
-5. **TypeScript Types and Interfaces**: Prefix interfaces with an I, like IProps or IState, to distinguish them from classes and other types[^3]. Though there are a lot of people who disagree with using the "I".
+   - For component files, stick with PascalCase to match the component names.
+3. **Folders**: Keep main directories lowercase to differentiate them from components.
+4. **CSS Modules**: If you’re using CSS modules, use camelCase for class names to maintain consistency with JavaScript naming conventions.
+5. **TypeScript Types and Interfaces**: Prefix interfaces with an I, like IProps or IState, to distinguish them from classes and other types. Though there are a lot of people who disagree with using the "I".
 6. **Event Handlers**: Start the names with handle, such as handleClick or handleInputChange.
 7. **State Variables**: Use descriptive names that reflect their purpose, like isLoading or userList.
 8. **Props**: Be descriptive and clear. For example, instead of data, use userData or profileData.
