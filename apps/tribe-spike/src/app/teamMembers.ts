@@ -15,7 +15,7 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Cael Baumgarten',
         email: 'caelbaumgarten2025@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQHNRPWaTPKEiQ/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1710627570373?e=1752105600&v=beta&t=jjIEJlo33mQhWvyzONnyL6PiMF428Z7vZMcrVUl3Wf4',
         team: 'Blue',
     },
     {
@@ -27,7 +27,7 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Sydney Hoppenworth',
         email: 'sydneyhoppenworth2026@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQHXJ-wJpcG3Lw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1705731757219?e=1752105600&v=beta&t=1Nz63Q6pXxWyr25_hMxz1NGrNNEbJkckMXedDmvmQQk',
         team: 'Blue',
     },
     {
@@ -39,25 +39,25 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Jay Yegon',
         email: 'jayyegon2027@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQGuB6euSGP2lw/profile-displayphoto-shrink_400_400/B56ZXUvNWrHEAg-/0/1743030903787?e=1752105600&v=beta&t=ANjTRtm7Qv-TroRZOXLsBsi8w2Kei1_PcP1QhAvqNss',
         team: 'Red',
     },
     {
         name: 'Emma Johnston',
         email: 'emmajohnston2025@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQHChDHNaAVImg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1702923648740?e=1752105600&v=beta&t=Yz2kFuShy2IeJRmxmuwFIjn-o0YM9fTGWf7YS9FMRP8',
         team: 'Red',
     },
     {
         name: 'Emma Scally',
         email: 'emmascally2026@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQExh43wNPiK_Q/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1727977471804?e=1752105600&v=beta&t=kay-1hW3igalC3a97iqNzsmBrOKsEENTGCRGLZYjeBo',
         team: 'Red',
     },
     {
         name: 'Richard Bann',
         email: 'richardbann2026@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQHU7o4NSPIFTA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1708395368843?e=1752105600&v=beta&t=Z2eL-IAhTNygxd3INADNpfabJa4shLH1EodQSsz7XrM',
         team: 'Red',
     },
     {
