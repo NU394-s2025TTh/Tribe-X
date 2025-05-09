@@ -21,7 +21,7 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Clarissa Shieh',
         email: 'clarissashieh2027@u.northwestern.edu',
-        imageUrl: 'https://www.linkedin.com/in/clarissashieh/',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQFUSldzoT59uQ/profile-displayphoto-shrink_400_400/B56ZVe9LdfGQAg-/0/1741054852099?e=1752105600&v=beta&t=91wG5N5uFeE2XgGwamveUnmTeb4dRql1WfJce04d1ys',
         team: 'Blue',
     },
     {

@@ -6,7 +6,7 @@ interface TeamMemberCardProps {
 
 export function TeamMemberCard({ member }: TeamMemberCardProps) {
   return (
-    <div className={`text-center w-80 p-3 rounded-lg shadow ${member.team == "Blue" ? "bg-blue-300" : "bg-red-300"}`}>
+    <div className={`text-center w-80 p-3 rounded-lg shadow mb-2 xl:m-0 ${member.team == "Blue" ? "bg-blue-300" : "bg-red-300"}`}>
       <img
         src={member.imageUrl}
         alt={member.name}
