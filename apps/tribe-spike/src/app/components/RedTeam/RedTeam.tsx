@@ -1,4 +1,5 @@
 import { ITeamMember } from '../../teamMembers';
+import { TeamMemberCard } from '../TeamMemberCard/TeamMemberCard';
 
 interface IProps {
   members: ITeamMember[];
@@ -6,23 +7,18 @@ interface IProps {
 
 export function RedTeam({ members }: IProps) {
   return (
-    <div className="bg-red-100 p-4 rounded shadow">
-      <h2 className="text-xl font-semibold mb-2">Red Team</h2>
-      {members.map(member => (
-        <div key={member.email} className="flex items-center gap-4 mb-2">
-          <img
-            src={member.imageUrl}
-            alt={member.name}
-            className="w-12 h-12 rounded-full border"
-          />
-          <div>
-            <p>{member.name}</p>
-            <a href={`mailto:${member.email}`} className="text-red-600 underline">
-              {member.email}
-            </a>
-          </div>
+    <div className="bg-red-100 p-4 rounded shadow w-full">
+      <h2 className="text-xl font-semibold mb-2 text-center">Red Team</h2>
+      <div className="grid grid-cols-2 gap-4 justify-items-center mb-4">
+        {members.slice(0, 4).map((member) => (
+          <TeamMemberCard key={member.email} member={member} />
+        ))}
+      </div>
+      {members[4] && (
+        <div className="flex justify-center">
+          <TeamMemberCard key={members[4].email} member={members[4]} />
         </div>
-      ))}
+      )}
     </div>
   );
 }

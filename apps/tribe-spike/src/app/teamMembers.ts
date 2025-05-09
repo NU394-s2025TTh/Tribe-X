@@ -2,7 +2,7 @@ export interface ITeamMember {
     name: string;
     email: string;
     imageUrl: string;
-    team: 'Blue' | 'Red' | 'Green';
+    team: 'Blue' | 'Red';
 }
   
 export const teamMembers: ITeamMember[] = [
