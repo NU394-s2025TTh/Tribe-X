@@ -33,7 +33,7 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Anaise Uwonakunze',
         email: 'anaise.uwonakunze@northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media-hosting.imagekit.io/37f672eee8814f4e/IMG_0650_2.jpg?Expires=1841424068&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=vFD8Yr9MoReG3tHuHAD4aHMB9Yso8q3ZsKcXe8yAoJKFJqFXOyP01k88S2w~wKXVEqlmkvknx8jZxOBrdhrKYOLUIGnLNv4EQRH-kNJEG6JPhnaYbNJfLw7xHU87IcEmdPZ1phGRmbcjxKwJcuxOnqWoILc36i3RqspkW4d-7agY6RDmgeel2G6HmW3IHJCMoV34PrrIuvR0Khlm6rsIfpPn-lxlEnbS4QgOGHBLbdgFuA6xn3PIcVFi56u1W46evjlxYbriPb3T2IlOw8RjA0NNNSCptDYxBcoCE3Qu-D24VZUuP9fLGLnNM6rYt7rn9XJxFPybJWVt-Cxf~fMG8g__',
         team: 'Blue',
     },
     {
