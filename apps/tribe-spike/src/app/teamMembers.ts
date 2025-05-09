@@ -63,7 +63,7 @@ export const teamMembers: ITeamMember[] = [
     {
         name: 'Lauren Tan',
         email: 'laurentan@u.northwestern.edu',
-        imageUrl: 'https://abs.twimg.com/sticky/default_profile_images/default_profile_400x400.png',
+        imageUrl: 'https://media.licdn.com/dms/image/v2/D5603AQHjPxIvM_PsXw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1698812024617?e=1752105600&v=beta&t=dXxEwgNsle_K6WNjkKZqbd4kSL4fObVDQd_5DqciBZ8',
         team: 'Red',
     }
 ];
