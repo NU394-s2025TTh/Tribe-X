@@ -80,8 +80,26 @@ window.addEventListener("load", () => {
       return;
     }
   
-    if (data && data.channel && data.channel.alternatives[0].transcript !== "") {
-      captions.innerHTML = `<span>${data.channel.alternatives[0].transcript}</span>`;
+    if (data && data.channel && data.channel.alternatives.length > 0) {
+      const words = data.channel.alternatives[0].words;
+      
+      if (words && words.length > 0) {
+        //group words by speaker
+        let currentSpeaker = words[0].speaker;
+        let display = `<div><strong>Speaker ${currentSpeaker}:</strong> `;
+    
+        for (let i = 0; i < words.length; i++) {
+          const word = words[i];
+          if (word.speaker !== currentSpeaker) {
+            display += `</div><div><strong>Speaker ${word.speaker}:</strong> `;
+            currentSpeaker = word.speaker;
+          }
+          display += word.punctuated_word ? `${word.punctuated_word} ` : `${word.word} `;
+        }
+    
+        display += "</div>";
+        captions.innerHTML = display;
+      }
     }
   });
 
