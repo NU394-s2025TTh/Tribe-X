@@ -3,15 +3,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter");
 
 body {
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   font-family: "Inter", sans-serif;
-  justify-content: center;
   flex-direction: column;
   height: 90vh;
-  background-color: #000;
-  padding-top: 100px;
+  background-color: #f8fafc;
 }
 
 .content {
@@ -60,7 +58,7 @@ body {
 .button-message {
   position: absolute;
   width: 50px;
-  color: #fff;
+  color: black;
   font-family: "Arimo", sans-serif;
   font-weight: 700;
   font-size: 25px;
@@ -145,7 +143,7 @@ body {
 }
 
 #captions {
-  color: rgb(237, 237, 242);
+  color: black;
   font-size: 24px;
   font-family: "Inter", sans-serif;
   margin: 10px 0;
@@ -159,57 +157,6 @@ h1 {
   letter-spacing: -0.02em;
   opacity: 1;
   text-align: center;
-}
-
-.button-container {
-  display: flex;
-  gap: 16px;
-}
-
-.info-button {
-  display: flex;
-  align-items: center;
-  color: black;
-  height: 40px;
-  border-radius: 4px;
-  padding: 0 16px;
-  margin-top: 32px;
-  font-family: "Arimo", sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.sign-up {
-  color: white;
-  position: relative;
-  background-origin: border-box;
-  background-image: linear-gradient(90deg, #201cff -91.5%, #13ef95 80.05%);
-  box-shadow: 2px 1000px 1px var(--md-code-background) inset;
-  z-index: 1;
-}
-
-.sign-up::before {
-  content: "";
-  border-radius: 4px;
-  position: absolute;
-  top: 1px;
-  right: 1px;
-  bottom: 1px;
-  left: 1px;
-  background-color: black;
-  z-index: -1;
-}
-
-.docs {
-  background-color: white;
-}
-
-.docs::after {
-  font-family: FontAwesome;
-  font-weight: 900;
-  content: "\f061";
-  margin-right: -4px;
-  margin-left: 8px;
 }
 
 .click {
