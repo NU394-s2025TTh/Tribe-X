@@ -8,15 +8,9 @@ body {
   align-items: center;
   font-family: "Inter", sans-serif;
   flex-direction: column;
-  height: 90vh;
+  height: 100%;
   background-color: #f8fafc;
-}
-
-.content {
-  display: flex;
-  height: 30vh;
-  position: relative;
-  align-items: center;
+  margin: 0;
 }
 
 .mic-checkbox {
@@ -46,6 +40,7 @@ body {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   position: relative;
+  cursor: pointer;
 }
 
 .button-message,
@@ -164,4 +159,26 @@ h1 {
   height: 150px;
   left: 20px;
   top: -144px;
+}
+
+.download-button {
+  cursor: pointer;
+  background-color:#4820c5;
+  color: white;
+  border: none;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.top-header {
+  width: 100%;
+  background-color: #020617;
+  color: white;
+  margin: 0;
+  margin-bottom: 100px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
