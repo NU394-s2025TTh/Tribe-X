@@ -1,4 +1,6 @@
-const captions = window.document.getElementById("captions");
+
+let fullTranscript = "";
+
 
 async function getMicrophone() {
   try {
@@ -87,21 +89,43 @@ window.addEventListener("load", () => {
         //group words by speaker
         let currentSpeaker = words[0].speaker;
         let display = `<div><strong>Speaker ${currentSpeaker}:</strong> `;
+
+        //adding transcript
+        let transcriptLine = `Speaker ${currentSpeaker}: `;
     
         for (let i = 0; i < words.length; i++) {
           const word = words[i];
           if (word.speaker !== currentSpeaker) {
             display += `</div><div><strong>Speaker ${word.speaker}:</strong> `;
+            transcriptLine += "\nSpeaker " + word.speaker + ": ";
             currentSpeaker = word.speaker;
           }
+          const finalWord = word.punctuated_word || word.word;
           display += word.punctuated_word ? `${word.punctuated_word} ` : `${word.word} `;
+          transcriptLine += finalWord + " ";
+
         }
     
         display += "</div>";
         captions.innerHTML = display;
+        
+        fullTranscript += transcriptLine.trim() + "\n";
       }
     }
   });
+
+  //function to download transcript
+  function downloadTranscript() {
+    const blob = new Blob([fullTranscript], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "transcript.txt";
+    a.click();
+    URL.revokeObjectURL(url); 
+  }
+
+  window.downloadTranscript = downloadTranscript;
 
   socket.addEventListener("close", () => {
     console.log("client: disconnected from server");
