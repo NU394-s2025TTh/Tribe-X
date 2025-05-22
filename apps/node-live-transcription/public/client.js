@@ -62,7 +62,9 @@ async function start(socket) {
 }
 
 window.addEventListener("load", () => {
-  const socket = new WebSocket("ws://localhost:3000");
+  const protocol = location.protocol === "https:" ? "wss" : "ws";
+  const socket = new WebSocket(`${protocol}://${location.host}`);
+
 
   socket.addEventListener("open", async () => {
     console.log("client: connected to server");
