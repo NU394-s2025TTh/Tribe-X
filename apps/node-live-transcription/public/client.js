@@ -118,15 +118,28 @@ window.addEventListener("load", () => {
 
   //function to download transcript
   function downloadTranscript() {
-    const blob = new Blob([fullTranscript], { type: "text/plain" });
+    let vttContent = "WEBVTT\n\n";
+    let currentTime = 0;
+  
+    const lines = fullTranscript.trim().split("\n");
+    const secondsPerLine = 5;
+  
+    lines.forEach((line, index) => {
+      const start = new Date(currentTime * 1000).toISOString().substr(11, 12);
+      const end = new Date((currentTime + secondsPerLine) * 1000).toISOString().substr(11, 12);
+      vttContent += `${start} --> ${end}\n${line}\n\n`;
+      currentTime += secondsPerLine;
+    });
+  
+    const blob = new Blob([vttContent], { type: "text/vtt" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "transcript.txt";
+    a.download = "transcript.vtt";
     a.click();
-    URL.revokeObjectURL(url); 
+    URL.revokeObjectURL(url);
   }
-
+  
   window.downloadTranscript = downloadTranscript;
 
   socket.addEventListener("close", () => {
