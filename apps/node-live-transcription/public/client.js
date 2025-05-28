@@ -1,6 +1,46 @@
-
 let fullTranscript = "";
+let speakerMap = {};  // e.g., { '1': 'Alice' }
 
+function getSpeakerName(id) {
+  return speakerMap[id] || `Speaker ${id}`;
+}
+
+function createSpeakerSpan(speakerId) {
+  const span = document.createElement("span");
+  span.classList.add("speaker-name");
+  span.dataset.speaker = speakerId;
+  span.textContent = getSpeakerName(speakerId);
+  span.style.cursor = "pointer";
+  span.style.fontWeight = "bold";
+  span.addEventListener("click", () => {
+    const newName = prompt(`Enter a name for Speaker ${speakerId}:`, getSpeakerName(speakerId));
+    if (newName && newName.trim()) {
+      speakerMap[speakerId] = newName.trim();
+      updateTranscriptDisplay();
+    }
+  });
+  return span;
+}
+
+function updateTranscriptDisplay() {
+  const lines = fullTranscript.trim().split("\n");
+  const container = document.getElementById("transcriptDisplay");
+  container.innerHTML = "";
+  lines.forEach(line => {
+    const match = line.match(/^Speaker (\d+):\s*(.*)/);
+    const div = document.createElement("div");
+    if (match) {
+      const speakerId = match[1];
+      const text = match[2];
+      const span = createSpeakerSpan(speakerId);
+      div.appendChild(span);
+      div.appendChild(document.createTextNode(": " + text));
+    } else {
+      div.textContent = line;
+    }
+    container.appendChild(div);
+  });
+}
 
 async function getMicrophone() {
   try {
@@ -17,16 +57,18 @@ async function openMicrophone(microphone, socket) {
     microphone.onstart = () => {
       console.log("client: microphone opened");
       document.body.classList.add("recording");
+      fullTranscript = "";
+      document.getElementById("transcriptDisplay").textContent = "Recording in progress...";
       resolve();
     };
 
     microphone.onstop = () => {
       console.log("client: microphone closed");
       document.body.classList.remove("recording");
+      updateTranscriptDisplay();
     };
 
     microphone.ondataavailable = (event) => {
-      console.log("client: microphone data received");
       if (event.data.size > 0 && socket.readyState === WebSocket.OPEN) {
         socket.send(event.data);
       }
@@ -44,8 +86,6 @@ async function start(socket) {
   const listenButton = document.querySelector("#record");
   let microphone;
 
-  console.log("client: waiting to open microphone");
-
   listenButton.addEventListener("click", async () => {
     if (!microphone) {
       try {
@@ -62,9 +102,11 @@ async function start(socket) {
 }
 
 window.addEventListener("load", () => {
+  const transcriptDisplay = document.getElementById("transcriptDisplay");
+  transcriptDisplay.textContent = "Recording not started.";
+
   const protocol = location.protocol === "https:" ? "wss" : "ws";
   const socket = new WebSocket(`${protocol}://${location.host}`);
-
 
   socket.addEventListener("open", async () => {
     console.log("client: connected to server");
@@ -72,10 +114,8 @@ window.addEventListener("load", () => {
   });
 
   socket.addEventListener("message", (event) => {
-    if (event.data === "") {
-      return;
-    }
-    
+    if (!event.data) return;
+
     let data;
     try {
       data = JSON.parse(event.data);
@@ -83,54 +123,50 @@ window.addEventListener("load", () => {
       console.error("Failed to parse JSON:", e);
       return;
     }
-  
-    if (data && data.channel && data.channel.alternatives.length > 0) {
-      const words = data.channel.alternatives[0].words;
-      
-      if (words && words.length > 0) {
-        //group words by speaker
-        let currentSpeaker = words[0].speaker;
-        let display = `<div><strong>Speaker ${currentSpeaker}:</strong> `;
 
-        //adding transcript
+    if (data?.channel?.alternatives?.length > 0) {
+      const words = data.channel.alternatives[0].words;
+      if (words && words.length > 0) {
+        let currentSpeaker = words[0].speaker;
         let transcriptLine = `Speaker ${currentSpeaker}: `;
-    
+
         for (let i = 0; i < words.length; i++) {
           const word = words[i];
           if (word.speaker !== currentSpeaker) {
-            display += `</div><div><strong>Speaker ${word.speaker}:</strong> `;
-            transcriptLine += "\nSpeaker " + word.speaker + ": ";
+            fullTranscript += transcriptLine.trim() + "\n";
             currentSpeaker = word.speaker;
+            transcriptLine = `Speaker ${currentSpeaker}: `;
           }
           const finalWord = word.punctuated_word || word.word;
-          display += word.punctuated_word ? `${word.punctuated_word} ` : `${word.word} `;
           transcriptLine += finalWord + " ";
-
         }
-    
-        display += "</div>";
-        captions.innerHTML = display;
-        
+
         fullTranscript += transcriptLine.trim() + "\n";
+        updateTranscriptDisplay();
       }
     }
   });
 
-  //function to download transcript
-  function downloadTranscript() {
+  window.downloadTranscript = function downloadTranscript() {
     let vttContent = "WEBVTT\n\n";
     let currentTime = 0;
-  
     const lines = fullTranscript.trim().split("\n");
     const secondsPerLine = 5;
-  
-    lines.forEach((line, index) => {
+
+    lines.forEach((line) => {
+      const match = line.match(/^Speaker (\d+):\s*(.*)/);
       const start = new Date(currentTime * 1000).toISOString().substr(11, 12);
       const end = new Date((currentTime + secondsPerLine) * 1000).toISOString().substr(11, 12);
-      vttContent += `${start} --> ${end}\n${line}\n\n`;
+      if (match) {
+        const speakerId = match[1];
+        const speakerText = match[2];
+        vttContent += `${start} --> ${end}\n${getSpeakerName(speakerId)}: ${speakerText}\n\n`;
+      } else {
+        vttContent += `${start} --> ${end}\n${line}\n\n`;
+      }
       currentTime += secondsPerLine;
     });
-  
+
     const blob = new Blob([vttContent], { type: "text/vtt" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -138,9 +174,7 @@ window.addEventListener("load", () => {
     a.download = "transcript.vtt";
     a.click();
     URL.revokeObjectURL(url);
-  }
-  
-  window.downloadTranscript = downloadTranscript;
+  };
 
   socket.addEventListener("close", () => {
     console.log("client: disconnected from server");
