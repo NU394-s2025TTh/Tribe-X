@@ -1,4 +1,30 @@
-# CS 394 Template NX Repo
+# CS 394 [empwr.ai](https://www.empwr.ai/) Client Project
+
+## Project Overview
+
+You can take this information from the product box.  Ideally, include a screen shot of the running app.
+
+## Application Link
+
+Provide a direct link to the running application. Include any necessary credentials or instructions required for a client to access and use the application in its current state.
+
+## Project Management
+
+Share a link to the project backlog. Offer an overview of how the project management tool is used
+
+## Build & Deployment
+
+Clearly outline the steps needed to build and deploy the application. This should cover any prerequisites, software dependencies, and a step-by-step guide to getting the application up and running on a new environment.
+
+## Additional Information
+
+Detail any pertinent information that someone external to the project might require to understand the codebase. This could encompass the project's architectural design, coding standards, and links to further documentation such as the project's doc file or additional resources in google or elsewhere.  these should be accessible to the teaching team.
+
+## Link to docs
+
+Link to other documentation that helps give context.  Refer back to the Iteration 0 Assignment and update anything that changed during the course of development.
+
+## Template NX Repo
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
