@@ -129,6 +129,7 @@ window.addEventListener("load", () => {
       if (words && words.length > 0) {
         let currentSpeaker = words[0].speaker;
         let transcriptLine = `Speaker ${currentSpeaker}: `;
+        let contextWords = [];
 
         for (let i = 0; i < words.length; i++) {
           const word = words[i];
@@ -136,9 +137,22 @@ window.addEventListener("load", () => {
             fullTranscript += transcriptLine.trim() + "\n";
             currentSpeaker = word.speaker;
             transcriptLine = `Speaker ${currentSpeaker}: `;
+            contextWords = [];
           }
           const finalWord = word.punctuated_word || word.word;
           transcriptLine += finalWord + " ";
+          contextWords.push(word.word.toLowerCase());
+          // only keep last 6 words for necessary context
+          if (contextWords.length > 6) {
+            contextWords.shift();
+          }
+          // detect phrases like "my name is ___"
+          const contextText = contextWords.join(" ");
+          const match = contextText.match(/(?:my name is)\s+([a-z]+)/i);
+          if (match) {
+            const name = match[1].charAt(0).toUpperCase() + match[1].slice(1);
+            speakerMap[currentSpeaker] = name;
+          }
         }
 
         fullTranscript += transcriptLine.trim() + "\n";
