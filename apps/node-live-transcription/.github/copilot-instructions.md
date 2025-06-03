@@ -6,14 +6,11 @@ This is a template for Copilot instructions. You can use this to provide specifi
 
 - use javascript
 - use html/css
-- use functional components
 - output in compatible prettier format (see [.prettierrc.cjs](.prettierrc.cjs)) for configuration.
-- ensure use of types and typescript without linting errors
 
 # Styling
 
-- use tailwindcss for styling
-- use class names for conditional styling
+- use css styling in the [style.css] file
 
 # Testing
 
@@ -27,7 +24,6 @@ Where possible share mock components between tests within a file without duplica
 
 This is the structure of the project:
 
-- put new capabilities / features in their own folder in the source directory. One component per file.
 - put shared ui components in a an nx library using the nx tool.
 
 # Creating scenarios, stories, features, and workitems
@@ -37,4 +33,3 @@ Create these using nicely formatted markdown files. Use the following structure:
 - put files in the [Backlog](docs/Backlog) folder
 - put stories in the [Stories](docs/Backlog/Stories) folder
 - put workitems in the [Workitems](docs/Backlog/Workitems) folder
-- put scenarios in the [Scenarios](docs/Backlog/Scenarios) folder
