@@ -1,6 +1,8 @@
 // Copilot test instructions followed: using vitest, mocking sub-components with vi.mock, covering 80%+ code with at least 8 tests
+// test suite for team-blue
 
 import { describe, it, beforeEach, vi, expect } from "vitest";
+
 
 // Simulate DOM before importing client.js
 beforeEach(() => {

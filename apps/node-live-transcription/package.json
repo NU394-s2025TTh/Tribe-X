@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test:client": "jest public/test/test.js",
+    "test:client": "jest run public/client.test.js",
+    "test:client2": "jest run public/client-other.test.js",
     "test": "npm run test:client"
   },
   "repository": {
@@ -31,7 +32,9 @@
     "ws": "^8.16.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
     "jsdom": "^26.1.0",
-    "vitest": "^3.1.4"
+    "vitest": "^3.2.0"
   }
 }

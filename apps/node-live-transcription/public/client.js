@@ -1,8 +1,8 @@
-let fullTranscript = "";
-let speakerMap = {};  // e.g., { '1': 'Alice' }
+window.fullTranscript = "";
+window.speakerMap = {};  // e.g., { '1': 'Alice' }
 
 function getSpeakerName(id) {
-  return speakerMap[id] || `Speaker ${id}`;
+  return window.speakerMap[id] || `Speaker ${id}`;
 }
 
 function createSpeakerSpan(speakerId) {
@@ -15,15 +15,17 @@ function createSpeakerSpan(speakerId) {
   span.addEventListener("click", () => {
     const newName = prompt(`Enter a name for Speaker ${speakerId}:`, getSpeakerName(speakerId));
     if (newName && newName.trim()) {
-      speakerMap[speakerId] = newName.trim();
+      window.speakerMap[speakerId] = newName.trim();
       updateTranscriptDisplay();
     }
   });
   return span;
 }
 
+window.updateTranscriptDisplay = updateTranscriptDisplay;
+
 function updateTranscriptDisplay() {
-  const lines = fullTranscript.trim().split("\n");
+  const lines = window.fullTranscript.trim().split("\n");
   const container = document.getElementById("transcriptDisplay");
   container.innerHTML = "";
   lines.forEach(line => {
@@ -57,7 +59,7 @@ async function openMicrophone(microphone, socket) {
     microphone.onstart = () => {
       console.log("client: microphone opened");
       document.body.classList.add("recording");
-      fullTranscript = "";
+      window.fullTranscript = "";
       document.getElementById("transcriptDisplay").textContent = "Recording in progress...";
       resolve();
     };
@@ -134,7 +136,7 @@ window.addEventListener("load", () => {
         for (let i = 0; i < words.length; i++) {
           const word = words[i];
           if (word.speaker !== currentSpeaker) {
-            fullTranscript += transcriptLine.trim() + "\n";
+            window.fullTranscript += transcriptLine.trim() + "\n";
             currentSpeaker = word.speaker;
             transcriptLine = `Speaker ${currentSpeaker}: `;
             contextWords = [];
@@ -151,11 +153,11 @@ window.addEventListener("load", () => {
           const match = contextText.match(/(?:my name is)\s+([a-z]+)/i);
           if (match) {
             const name = match[1].charAt(0).toUpperCase() + match[1].slice(1);
-            speakerMap[currentSpeaker] = name;
+            window.speakerMap[currentSpeaker] = name;
           }
         }
 
-        fullTranscript += transcriptLine.trim() + "\n";
+        window.fullTranscript += transcriptLine.trim() + "\n";
         updateTranscriptDisplay();
       }
     }
@@ -164,7 +166,7 @@ window.addEventListener("load", () => {
   window.downloadTranscript = function downloadTranscript() {
     let vttContent = "WEBVTT\n\n";
     let currentTime = 0;
-    const lines = fullTranscript.trim().split("\n");
+    const lines = window.fullTranscript.trim().split("\n");
     const secondsPerLine = 5;
 
     lines.forEach((line) => {
