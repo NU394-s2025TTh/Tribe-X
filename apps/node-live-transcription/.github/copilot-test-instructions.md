@@ -1,0 +1,12 @@
+- Use Vitest for testing
+- Suggest all tests before generating code; implement tests one at a time
+- create tests in the same director as the component in their own file.
+- Use React Testing Library for testing React components
+- Use Jest DOM for testing DOM elements
+- Use the `describe` block for each major set of tests
+- Share mock components between tests within a file without duplicating code
+- Use the `it` block for each individual test case
+- Use the `beforeEach` block to set up any necessary state or props before each test
+- Use the `afterEach` block to clean up any state or props after each test
+- Use the `expect` function to make assertions about the rendered output
+- Explicitly import the testing utilities from React Testing Library, vitest and Jest DOM
