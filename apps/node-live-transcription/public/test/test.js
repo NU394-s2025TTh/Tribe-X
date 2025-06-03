@@ -33,20 +33,49 @@ describe('Deepgram response test',  () => {
   });
 });
 
-import { render, fireEvent } from '@testing-library/react';
-import CopyTranscript from './CopyTranscript';
+describe('copyTranscriptToClipboard', () => {
+  beforeEach(() => {
+    // Mock the clipboard API
+    Object.assign(navigator, {
+      clipboard: {
+        writeText: jest.fn(),
+      },
+    });
 
-describe('CopyTranscript Component', () => {
-  it('copies transcript to clipboard excluding empty lines', async () => {
-    const transcript = `Line 1\n\nLine 2\n\n\nLine 3`;
-    const { getByText } = render(<CopyTranscript transcript={transcript} />);
+    // Set up a mock transcript
+    window.fullTranscript = `Speaker 1: Hello\n\nSpeaker 2: How are you?\n\n\nSpeaker 1: I'm fine, thank you.`;
+  });
 
-    const copyButton = getByText('Copy Transcript');
-    fireEvent.click(copyButton);
+  it('copies cleaned transcript to clipboard', async () => {
+    // Call the function
+    window.copyTranscriptToClipboard();
 
-    const expectedText = 'Line 1\nLine 2\nLine 3';
-    await navigator.clipboard.writeText(expectedText);
+    // Expected cleaned transcript
+    const expectedTranscript = `Speaker 1: Hello\nSpeaker 2: How are you?\nSpeaker 1: I'm fine, thank you.`;
 
-    expect(await navigator.clipboard.readText()).toBe(expectedText);
+    // Assert that the clipboard API was called with the cleaned transcript
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith(expectedTranscript);
+  });
+
+  it('handles empty transcript gracefully', async () => {
+    // Set an empty transcript
+    window.fullTranscript = '';
+
+    // Call the function
+    window.copyTranscriptToClipboard();
+
+    // Assert that the clipboard API was called with an empty string
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('');
+  });
+
+  it('handles transcript with only whitespace', async () => {
+    // Set a whitespace-only transcript
+    window.fullTranscript = `\n\n   \n`;
+
+    // Call the function
+    window.copyTranscriptToClipboard();
+
+    // Assert that the clipboard API was called with an empty string
+    expect(navigator.clipboard.writeText).toHaveBeenCalledWith('');
   });
 });
