@@ -5,7 +5,8 @@ import { describe, expect, beforeEach, test } from "vitest";
 import "./client.js";
 
 test('showEditableTranscript loads and renders without error', () => {
-
-  const textarea = document.getElementById('editableTranscript');
-  expect(textarea).toBeNull();
+    document.body.innerHTML = '<div id="transcriptDisplay"></div>';
+    window.fullTranscript = "Speaker 1: Hi\nSpeaker 2: Hello";
+    expect(() => window.showEditableTranscript()).not.toThrow();
+    
 });
