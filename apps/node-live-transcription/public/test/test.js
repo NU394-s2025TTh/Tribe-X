@@ -32,3 +32,21 @@ describe('Deepgram response test',  () => {
     });
   });
 });
+
+import { render, fireEvent } from '@testing-library/react';
+import CopyTranscript from './CopyTranscript';
+
+describe('CopyTranscript Component', () => {
+  it('copies transcript to clipboard excluding empty lines', async () => {
+    const transcript = `Line 1\n\nLine 2\n\n\nLine 3`;
+    const { getByText } = render(<CopyTranscript transcript={transcript} />);
+
+    const copyButton = getByText('Copy Transcript');
+    fireEvent.click(copyButton);
+
+    const expectedText = 'Line 1\nLine 2\nLine 3';
+    await navigator.clipboard.writeText(expectedText);
+
+    expect(await navigator.clipboard.readText()).toBe(expectedText);
+  });
+});
