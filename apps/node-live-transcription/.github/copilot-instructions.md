@@ -4,8 +4,8 @@ This is a template for Copilot instructions. You can use this to provide specifi
 
 # Instructions
 
-- use typescript
-- use react
+- use javascript
+- use html/css
 - use functional components
 - output in compatible prettier format (see [.prettierrc.cjs](.prettierrc.cjs)) for configuration.
 - ensure use of types and typescript without linting errors

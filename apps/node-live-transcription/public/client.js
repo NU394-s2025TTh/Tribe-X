@@ -196,3 +196,18 @@ window.addEventListener("load", () => {
     console.log("client: disconnected from server");
   });
 });
+
+window.copyTranscriptToClipboard = function copyTranscriptToClipboard() {
+  const cleanedTranscript = window.fullTranscript
+    .split("\n")
+    .filter((line) => line.trim() !== "")
+    .join("\n");
+
+  navigator.clipboard.writeText(cleanedTranscript)
+    .then(() => {
+      alert("Transcript copied to clipboard!");
+    })
+    .catch((err) => {
+      console.error("Failed to copy transcript:", err);
+    });
+};

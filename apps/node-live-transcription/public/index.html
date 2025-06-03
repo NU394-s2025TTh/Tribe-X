@@ -40,7 +40,15 @@
         >
           Download Transcript
         </button>
-        <CopyTranscript transcript={transcript} />
+        <div className="p-4 border rounded-md shadow-md">
+          <pre className="bg-gray-100 p-2 rounded-md whitespace-pre-wrap">{transcript}</pre>
+          <button
+            onclick="copyTranscriptToClipboard()"
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+          >
+            Copy Transcript
+          </button>
+        </div>
         <script src="client.js"></script>
       </div>
       <div class="transcript-container">
