@@ -67,7 +67,8 @@ async function openMicrophone(microphone, socket) {
     microphone.onstop = () => {
       console.log("client: microphone closed");
       document.body.classList.remove("recording");
-      updateTranscriptDisplay();
+      // Show editable transcript after recording stops
+      showEditableTranscript();
     };
 
     microphone.ondataavailable = (event) => {
@@ -196,3 +197,24 @@ window.addEventListener("load", () => {
     console.log("client: disconnected from server");
   });
 });
+
+function showEditableTranscript() {
+  const container = document.getElementById("transcriptDisplay");
+  container.innerHTML = "";
+  const textarea = document.createElement("textarea");
+  textarea.id = "editableTranscript";
+  textarea.style.width = "100%";
+  textarea.style.height = "300px";
+  textarea.value = window.fullTranscript.trim();
+  container.appendChild(textarea);
+
+  const saveBtn = document.createElement("button");
+  saveBtn.textContent = "Save";
+  saveBtn.style.marginTop = "10px";
+  saveBtn.onclick = function() {
+    window.fullTranscript = textarea.value;
+    updateTranscriptDisplay();
+  };
+  container.appendChild(document.createElement("br"));
+  container.appendChild(saveBtn);
+}
