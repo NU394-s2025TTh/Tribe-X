@@ -218,3 +218,5 @@ function showEditableTranscript() {
   container.appendChild(document.createElement("br"));
   container.appendChild(saveBtn);
 }
+
+window.showEditableTranscript = showEditableTranscript;
