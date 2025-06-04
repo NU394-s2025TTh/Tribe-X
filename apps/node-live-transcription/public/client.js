@@ -69,7 +69,6 @@ async function openMicrophone(microphone, socket) {
     microphone.onstop = () => {
       console.log("client: microphone closed");
       document.body.classList.remove("recording");
-      showEditableTranscript();
     };
 
     microphone.ondataavailable = (event) => {
