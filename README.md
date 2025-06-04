@@ -24,17 +24,23 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 
 ## Build & Deployment
 
+### Prerequisites
+- Node.js (v18+ recommended)
+- Firebase CLI (`npm install -g firebase-tools`)
+- Nx CLI (`npm install -g nx`)
+- Optional: `pnpm` for improved dependency handling
+
 Clearly outline the steps needed to build and deploy the application. This should cover any prerequisites, software dependencies, and a step-by-step guide to getting the application up and running on a new environment.
 
 ## Additional Information
 
 Architecture:
 - This repo was configured as an [Nx](https://nx.dev) monorepo. For more information, reference the Nx repo details below.
-- Code is located inside the ```apps/node-live-transcription``` folder. The main files are public/client.js, public/index.html, public/styles.css, and server.js.
+- Code is located inside the `apps/node-live-transcription` folder. The main files are public/client.js, public/index.html, public/styles.css, and server.js.
 
 Hosting: [Firebase](https://firebase.google.com/) is configured for hosting. More details are above under build and deployment.
 
-Testing: [Vitest](https://vitest.dev/) is configured for unit testing. Tests are located within the same ```apps/node-live-transcription``` as above.
+Testing: [Vitest](https://vitest.dev/) is configured for unit testing. Tests are located within the same `apps/node-live-transcription` folder as above.
 
 Roadmap: Our project roadmap is available [here](https://docs.google.com/document/d/1Yildu6uYLCbxv-jJNFtlB73oXyXqdJ8mZ3RbSuFyJPA/edit?usp=sharing).
 
