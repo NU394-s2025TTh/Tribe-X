@@ -4,20 +4,17 @@ This is a template for Copilot instructions. You can use this to provide specifi
 
 # Instructions
 
-- use typescript
-- use react
-- use functional components
-<!-- - output in compatible prettier format (see [.prettierrc.cjs](.prettierrc.cjs)) for configuration. -->
-- ensure use of types and typescript without linting errors
+- use javascript
+- use html/css
+- output in compatible prettier format (see [.prettierrc.cjs](.prettierrc.cjs)) for configuration.
 
 # Styling
 
-- use tailwindcss for styling
-- use class names for conditional styling
+- use css styling in the [style.css] file
 
 # Testing
 
-<!-- Develop tests using the instructions in [copilot-test-instructions.md](.github/copilot-test-instructions.md). -->
+Develop tests using the instructions in [copilot-test-instructions.md](.github/copilot-test-instructions.md).
 
 In general, develop test first, generating vitests in the same file as the component.
 Create describe blocks for each major set of tests.
@@ -33,7 +30,6 @@ This is the structure of the project:
 # Creating scenarios, stories, features, and workitems
 
 Create these using nicely formatted markdown files. Use the following structure:
-
 <!--
 - put files in the [Backlog](docs/Backlog) folder
 - put stories in the [Stories](docs/Backlog/Stories) folder
