@@ -25,9 +25,9 @@ function createSpeakerSpan(speakerId) {
 window.updateTranscriptDisplay = updateTranscriptDisplay;
 
 function updateTranscriptDisplay() {
-  const lines = window.fullTranscript.trim().split("\n");
   const container = document.getElementById("transcriptDisplay");
   container.innerHTML = "";
+  const lines = window.fullTranscript.trim().split("\n");
   lines.forEach(line => {
     const match = line.match(/^Speaker (\d+):\s*(.*)/);
     const div = document.createElement("div");
@@ -60,14 +60,15 @@ async function openMicrophone(microphone, socket) {
       console.log("client: microphone opened");
       document.body.classList.add("recording");
       window.fullTranscript = "";
+      updateTranscriptDisplay();
       document.getElementById("transcriptDisplay").textContent = "Recording in progress...";
+      
       resolve();
     };
 
     microphone.onstop = () => {
       console.log("client: microphone closed");
       document.body.classList.remove("recording");
-      // Show editable transcript after recording stops
       showEditableTranscript();
     };
 
