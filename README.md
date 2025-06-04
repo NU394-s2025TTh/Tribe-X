@@ -34,19 +34,27 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 ### Setup Instructions
 1. Navigate to the directory where you want the project:
 
-```cd path/to/your/projects```
+```
+cd path/to/your/projects
+```
 
 2. Clone the repository:
 
-```git clone https://github.com/NU394-s2025TTh/Tribe-X.git```
+```
+git clone https://github.com/NU394-s2025TTh/Tribe-X.git
+```
 
 3. Navigate into the project:
 
-```cd Tribe-X/apps/node-live-transcription```
+```
+cd Tribe-X/apps/node-live-transcription
+```
 
 4. Install dependencies:
 
-```npm install```
+```
+npm install
+```
 
 #### Running Locally
 
@@ -58,13 +66,17 @@ DEEPGRAM_API_KEY=%api_key%
 
 6. From the `Tribe-X/apps/node-live-transcription` directory, Run the application:
 
-```npm run start```
+```
+npm run start
+```
 
 #### Deploying Separately
 
-5. Create a new [Firebase](https://firebase.google.com/) Project and update the `.firebaserc` and `firebase.json` files with corresponding name and config. 
+5. Create a new [Firebase](https://firebase.google.com/) Project and update the `.firebaserc` and `firebase.json` files with corresponding name and config.
 
-6. Deploy using [Firebase CLI](https://firebase.google.com/docs/cli).
+(GOOGLE CLOUD INSTRUCTIONS HERE)
+
+7. Deploy using [Firebase CLI](https://firebase.google.com/docs/cli).
 
 ## Additional Information
 
