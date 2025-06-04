@@ -29,8 +29,42 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 - Firebase CLI (`npm install -g firebase-tools`)
 - Nx CLI (`npm install -g nx`)
 - Optional: `pnpm` for improved dependency handling
+- [Deepgram API key](https://console.deepgram.com/)
 
-Clearly outline the steps needed to build and deploy the application. This should cover any prerequisites, software dependencies, and a step-by-step guide to getting the application up and running on a new environment.
+### Setup Instructions
+1. Navigate to the directory where you want the project:
+
+`cd path/to/your/projects`
+
+2. Clone the repository:
+
+`git clone https://github.com/NU394-s2025TTh/Tribe-X.git`
+
+3. Navigate into the project:
+
+`cd Tribe-X/apps/node-live-transcription`
+
+4. Install dependencies:
+
+`npm install`
+
+#### Running Locally
+
+5. Create a new file called `.env`. Paste in the code and enter your API key you generated in the [Deepgram console](https://console.deepgram.com/):
+
+`js
+DEEPGRAM_API_KEY=%api_key%
+`
+
+6. From the `Tribe-X/apps/node-live-transcription` directory, Run the application:
+
+`npm run start`
+
+#### Deploying Separately
+
+5. Create a new [Firebase](https://firebase.google.com/) Project and update the `.firebaserc` and `firebase.json` files with corresponding name and config. 
+
+6. Deploy using [Firebase CLI](https://firebase.google.com/docs/cli).
 
 ## Additional Information
 
