@@ -34,31 +34,31 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 ### Setup Instructions
 1. Navigate to the directory where you want the project:
 
-`cd path/to/your/projects`
+```cd path/to/your/projects```
 
 2. Clone the repository:
 
-`git clone https://github.com/NU394-s2025TTh/Tribe-X.git`
+```git clone https://github.com/NU394-s2025TTh/Tribe-X.git```
 
 3. Navigate into the project:
 
-`cd Tribe-X/apps/node-live-transcription`
+```cd Tribe-X/apps/node-live-transcription```
 
 4. Install dependencies:
 
-`npm install`
+```npm install```
 
 #### Running Locally
 
 5. Create a new file called `.env`. Paste in the code and enter your API key you generated in the [Deepgram console](https://console.deepgram.com/):
 
-`js
+```js
 DEEPGRAM_API_KEY=%api_key%
-`
+```
 
 6. From the `Tribe-X/apps/node-live-transcription` directory, Run the application:
 
-`npm run start`
+```npm run start```
 
 #### Deploying Separately
 
