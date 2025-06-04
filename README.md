@@ -2,15 +2,25 @@
 
 ## Project Overview
 
-You can take this information from the product box.  Ideally, include a screen shot of the running app.
+A web-based platform that records your meetings and delivers accurate transcripts on a dedicated page — turning every conversation into a searchable, shareable resource. Empower teams with clarity and alignment through transparent documentation.
+- Record & Transcribe Automatically: Every meeting is recorded with transcripts for easy access and collaboration.
+- Remember What Matters: Quickly grasp the key points with separated participants and discussion topics.
+- Track Engagement & Follow-Through: Help monitor meeting trends like participation to help teams stay aligned and accountable.
+
+(FINAL APP SCREENSHOT HERE)
 
 ## Application Link
 
-Provide a direct link to the running application. Include any necessary credentials or instructions required for a client to access and use the application in its current state.
+(FINAL RUNNING APP LINK HERE)
+
+No credentials are required for general access while the current [Firebase](https://firebase.google.com/) project is active. If it is deleted or to set up a new one, reference the build and deployment steps below.
 
 ## Project Management
 
-Share a link to the project backlog. Offer an overview of how the project management tool is used
+We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to manage our backlog and task assignmens. Our team used this project management tool to:
+- Organize features by development stage (Backlog, In Progress, Review, Done)
+- Track bugs and enhancements
+- Assign tasks to team members
 
 ## Build & Deployment
 
@@ -20,15 +30,23 @@ Clearly outline the steps needed to build and deploy the application. This shoul
 
 Detail any pertinent information that someone external to the project might require to understand the codebase. This could encompass the project's architectural design, coding standards, and links to further documentation such as the project's doc file or additional resources in google or elsewhere.  these should be accessible to the teaching team.
 
+Architecture:
+- This repo was configured as an [Nx](https://nx.dev) monorepo. For more information, reference the Nx repo details below.
+- Code is located inside the ```apps/node-live-transcription``` folder. The main files are public/client.js, public/index.html, public/styles.css, and server.js.
+
+Hosting: [Firebase](https://firebase.google.com/) is configured for hosting. More details are above under build and deployment.
+
+Testing: [Vitest](https://vitest.dev/) is configured for unit testing. Tests are located within the same ```apps/node-live-transcription``` as above.
+
 ## Link to docs
 
 Link to other documentation that helps give context.  Refer back to the Iteration 0 Assignment and update anything that changed during the course of development.
 
-## Template NX Repo
+## NX Repo Details
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ This is an empty [Nx workspace](https://nx.dev) for your tribe to populate ✨.
+✨ This is an [Nx workspace](https://nx.dev) that our tribe populated for class (we kept details below) ✨.
 
 [Learn more about this workspace setup and its capabilities](https://nx.dev/tutorials/2-react-monorepo/1r-introduction/1-welcome?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
 
