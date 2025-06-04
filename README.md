@@ -7,7 +7,7 @@ A web-based platform that records your meetings and delivers accurate transcript
 - Remember What Matters: Quickly grasp the key points with separated participants and discussion topics.
 - Track Engagement & Follow-Through: Help monitor meeting trends like participation to help teams stay aligned and accountable.
 
-(FINAL APP SCREENSHOT HERE)
+<img width="829" alt="Screen Shot 2025-06-04 at 6 14 05 PM" src="https://github.com/user-attachments/assets/62521322-f48a-4891-89c6-380dfebed09f" />
 
 ## Application Link
 
