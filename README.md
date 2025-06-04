@@ -28,8 +28,6 @@ Clearly outline the steps needed to build and deploy the application. This shoul
 
 ## Additional Information
 
-Detail any pertinent information that someone external to the project might require to understand the codebase. This could encompass the project's architectural design, coding standards, and links to further documentation such as the project's doc file or additional resources in google or elsewhere.  these should be accessible to the teaching team.
-
 Architecture:
 - This repo was configured as an [Nx](https://nx.dev) monorepo. For more information, reference the Nx repo details below.
 - Code is located inside the ```apps/node-live-transcription``` folder. The main files are public/client.js, public/index.html, public/styles.css, and server.js.
@@ -37,6 +35,10 @@ Architecture:
 Hosting: [Firebase](https://firebase.google.com/) is configured for hosting. More details are above under build and deployment.
 
 Testing: [Vitest](https://vitest.dev/) is configured for unit testing. Tests are located within the same ```apps/node-live-transcription``` as above.
+
+Roadmap: Our project roadmap is available [here](https://docs.google.com/document/d/1Yildu6uYLCbxv-jJNFtlB73oXyXqdJ8mZ3RbSuFyJPA/edit?usp=sharing).
+
+Research: More detailed research of transcription softwares is available [here](https://docs.google.com/document/d/1uVhmZumyYQa9gsF4u_r94i5yzy3eVIqKJ69d1pTXzGw/edit?usp=sharing)
 
 ## Link to docs
 
