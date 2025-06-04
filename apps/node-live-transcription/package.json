@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node server.js",
     "test:client": "jest run public/client.test.js",
-    "test:client2": "jest run public/client-other.test.js",
     "test": "npm run test:client"
   },
   "repository": {
