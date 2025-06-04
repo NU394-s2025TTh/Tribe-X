@@ -216,22 +216,52 @@ window.copyTranscriptToClipboard = function copyTranscriptToClipboard() {
 function showEditableTranscript() {
   const container = document.getElementById("transcriptDisplay");
   container.innerHTML = "";
+
+  const lines = window.fullTranscript.trim().split("\n");
+  const editableLines = lines.map(line => {
+    const match = line.match(/^Speaker (\d+):\s*(.*)/);
+    if (match) {
+      const speakerId = match[1];
+      const text = match[2];
+      return `${getSpeakerName(speakerId)}: ${text}`;
+    }
+    return line;
+  });
+
   const textarea = document.createElement("textarea");
   textarea.id = "editableTranscript";
   textarea.style.width = "100%";
   textarea.style.height = "300px";
-  textarea.value = window.fullTranscript.trim();
+  textarea.value = editableLines.join("\n");
   container.appendChild(textarea);
 
   const saveBtn = document.createElement("button");
   saveBtn.textContent = "Save";
   saveBtn.style.marginTop = "10px";
   saveBtn.onclick = function() {
-    window.fullTranscript = textarea.value;
+    
+    const editedLines = textarea.value.split("\n").map(line => {
+      
+      const match = line.match(/^([^:]+):\s*(.*)/);
+      if (match) {
+        const name = match[1].trim();
+        const text = match[2];
+        
+        const speakerId = Object.keys(window.speakerMap).find(
+          id => window.speakerMap[id] === name
+        );
+        if (speakerId) {
+          return `Speaker ${speakerId}: ${text}`;
+        }
+      }
+      return line;
+    });
+    window.fullTranscript = editedLines.join("\n");
     updateTranscriptDisplay();
   };
   container.appendChild(document.createElement("br"));
   container.appendChild(saveBtn);
 }
+
 
 window.showEditableTranscript = showEditableTranscript;
