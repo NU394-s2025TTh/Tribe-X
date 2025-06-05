@@ -12,7 +12,7 @@ A web-based platform that records your meetings and delivers accurate transcript
 
 ## Application Link
 
-(FINAL RUNNING APP LINK HERE)
+[Application link](https://tribe-x-transcription-575229600431.us-central1.run.app/)
 
 No credentials are required for general access while the current [Firebase](https://firebase.google.com/) project is active. If it is deleted or to set up a new one, reference the build and deployment steps below.
 
@@ -76,9 +76,9 @@ npm run start
 
 #### Deploying Separately
 
-5. Create a new [Firebase](https://firebase.google.com/) Project and update the `.firebaserc` and `firebase.json` files with corresponding name and config.
+5. Create a new [Firebase](https://firebase.google.com/) project and update the `.firebaserc` and `firebase.json` files with corresponding name and config.
 
-(GOOGLE CLOUD INSTRUCTIONS HERE)
+6. Create a new [Google Cloud](https://cloud.google.com/) project and use the corresponding Deepgram API in the APIs & Services section.
 
 7. Deploy using [Firebase CLI](https://firebase.google.com/docs/cli).
 
@@ -101,7 +101,7 @@ Research: More detailed research of transcription softwares is available [here](
 
 Client information can be found in `docs/Client-Information.md`
 
-We used Deepgram's node live transcription starter app. The starter code is available [here] (https://github.com/deepgram-starters/node-live-transcription). More information about Deepgram can be found [here] (https://deepgram.com/)
+We used Deepgram's node live transcription starter app. The starter code is available [here](https://github.com/deepgram-starters/node-live-transcription). More information about Deepgram can be found [here](https://deepgram.com/)
 More information about our team's working practices can be found below:
 
 Working practices, including the project structure, naming conventions, and approaches to branching and merging can be found in `docs/Project-Structure.md`, `docs/Naming-Conventions.md`, and `docs/Approaches-to-Branching-and-Merging.md` respectively.
