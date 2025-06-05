@@ -3,6 +3,7 @@
 ## Project Overview
 
 A web-based platform that records your meetings and delivers accurate transcripts on a dedicated page — turning every conversation into a searchable, shareable resource. Empower teams with clarity and alignment through transparent documentation.
+
 - Record & Transcribe Automatically: Every meeting is recorded with transcripts for easy access and collaboration.
 - Remember What Matters: Quickly grasp the key points with separated participants and discussion topics.
 - Track Engagement & Follow-Through: Help monitor meeting trends like participation to help teams stay aligned and accountable.
@@ -18,6 +19,7 @@ No credentials are required for general access while the current [Firebase](http
 ## Project Management
 
 We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to manage our backlog and task assignmens. Our team used this project management tool to:
+
 - Organize features by development stage (Backlog, In Progress, Review, Done)
 - Track bugs and enhancements
 - Assign tasks to team members
@@ -25,6 +27,7 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 ## Build & Deployment
 
 ### Prerequisites
+
 - Node.js (v18+ recommended)
 - Firebase CLI (`npm install -g firebase-tools`)
 - Nx CLI (`npm install -g nx`)
@@ -32,6 +35,7 @@ We used a [GitHub Project](https://github.com/orgs/NU394-s2025TTh/projects/7) to
 - [Deepgram API key](https://console.deepgram.com/)
 
 ### Setup Instructions
+
 1. Navigate to the directory where you want the project:
 
 ```
@@ -81,6 +85,7 @@ npm run start
 ## Additional Information
 
 Architecture:
+
 - This repo was configured as an [Nx](https://nx.dev) monorepo. For more information, reference the Nx repo details below.
 - Code is located inside the `apps/node-live-transcription` folder. The main files are public/client.js, public/index.html, public/styles.css, and server.js.
 
@@ -94,7 +99,14 @@ Research: More detailed research of transcription softwares is available [here](
 
 ## Link to docs
 
-Link to other documentation that helps give context.  Refer back to the Iteration 0 Assignment and update anything that changed during the course of development.
+Client information can be found in `docs/Client-Information.md`
+
+We used Deepgram's node live transcription starter app. The starter code is available [here] (https://github.com/deepgram-starters/node-live-transcription). More information about Deepgram can be found [here] (https://deepgram.com/)
+More information about our team's working practices can be found below:
+
+Working practices, including the project structure, naming conventions, and approaches to branching and merging can be found in `docs/Project-Structure.md`, `docs/Naming-Conventions.md`, and `docs/Approaches-to-Branching-and-Merging.md` respectively.
+
+Team coordination structure is stated in `docs/Organizational-Practices.md`
 
 ## NX Repo Details
 
