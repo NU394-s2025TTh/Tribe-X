@@ -44,6 +44,10 @@ body {
   margin: auto;
 }
 
+.mic-button:hover {
+  outline:.2rem solid #47aca9
+}
+
 .button-message,
 .mic {
   backface-visibility: hidden;
@@ -167,8 +171,13 @@ h1 {
   background-color:#4820c5;
   color: white;
   border: none;
-  height: 50px;
+  /* height: 50px; */
+  padding:1.5rem;
   border-radius: 10px;
+}
+
+.download-button:hover {
+  outline: .2rem solid black;
 }
 
 .top-header {
@@ -195,7 +204,7 @@ h1 {
   color: #0f172a;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   min-height: 33rem;
   align-content: center;
@@ -207,7 +216,7 @@ h1 {
   color: #0f172a;
   border-radius: 10px;
   border: 1px solid #e5e7eb;
-  padding: 1rem;
+  padding: 2rem;
   min-width: 20rem;
   min-height: 33rem;
 }
