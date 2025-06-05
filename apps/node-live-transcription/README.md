@@ -29,6 +29,9 @@ Install the project dependencies.
 ```bash
 npm install
 ```
+### Set up Docker
+
+Set up Docker to containerize the app for consistent local development and deployment across environments. This is necessary to deploy the node backend.
 
 #### Edit the config file
 
