@@ -79,8 +79,10 @@ npm run start
 5. Create a new [Firebase](https://firebase.google.com/) project and update the `.firebaserc` and `firebase.json` files with corresponding name and config.
 
 6. Create a new [Google Cloud](https://cloud.google.com/) project and use the corresponding Deepgram API in the APIs & Services section.
+  
+8. Set up [Docker](https://www.docker.com/) to containerize the app for consistent local development and deployment across environments. This is necessary to deploy the node backend.
 
-7. Deploy using [Firebase CLI](https://firebase.google.com/docs/cli).
+9. Deploy containerized application through container image.
 
 ## Additional Information
 
